@@ -25,6 +25,9 @@ public class Note implements Parcelable {
         }
     };
 
+    public Note(int index, String toDo) {
+    }
+
     public String getName() {
         return name;
     }

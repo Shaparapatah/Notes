@@ -12,15 +12,14 @@ import android.view.ViewGroup;
 public class ListNotesFragment extends Fragment {
 
 
+
     public static ListNotesFragment newInstance() {
         return new ListNotesFragment();
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override

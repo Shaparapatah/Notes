@@ -43,7 +43,9 @@ public class NotesFragment extends Fragment {
         AppCompatEditText editText = view.findViewById(R.id.editTextView);
         AppCompatTextView textView = view.findViewById(R.id.textView);
         textView.setText(this.note.getName());
-        editText.setText(this.note.getToDo());
+
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.toDoList);
+        editText.setText(typedArray.getResourceId(this.note.getToDo(), -1));
         return view;
     }
 }

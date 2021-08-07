@@ -10,15 +10,15 @@
     </string-array>
 
 
-    <string-array name="toDoList">
-        <item>Заметка на понедельник</item>
-        <item>Заметка на вторник</item>
-        <item>Заметка на среду</item>
-        <item>Заметка на четверг</item>
-        <item>Заметка на пятницу</item>
+    <integer-array name="toDoList">
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
 
 
-    </string-array>
+    </integer-array>
 
 
 </resources>

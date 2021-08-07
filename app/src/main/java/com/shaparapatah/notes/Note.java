@@ -5,12 +5,11 @@ import android.os.Parcelable;
 
 public class Note implements Parcelable {
     private String name;
-    private String toDo;
-
+    private int toDo;
 
     protected Note(Parcel in) {
         name = in.readString();
-        toDo = in.readString();
+        toDo = in.readInt();
     }
 
     public static final Creator<Note> CREATOR = new Creator<Note>() {
@@ -25,9 +24,6 @@ public class Note implements Parcelable {
         }
     };
 
-    public Note(int index, String toDo) {
-    }
-
     public String getName() {
         return name;
     }
@@ -36,15 +32,15 @@ public class Note implements Parcelable {
         this.name = name;
     }
 
-    public String getToDo() {
+    public int getToDo() {
         return toDo;
     }
 
-    public void setToDo(String toDo) {
+    public void setToDo(int toDo) {
         this.toDo = toDo;
     }
 
-    public Note(String name, String toDo) {
+    public Note(String name, int toDo) {
         this.name = name;
         this.toDo = toDo;
 
@@ -59,6 +55,6 @@ public class Note implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeString(toDo);
+        dest.writeInt(toDo);
     }
 }

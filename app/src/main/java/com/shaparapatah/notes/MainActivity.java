@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.notesFragment_container, NotesFragment.newInstance(new Note("test", "test")))
+                    .replace(R.id.notesFragment_container, NotesFragment.newInstance(new Note("test", 0)))
                     .commit();
         }
 

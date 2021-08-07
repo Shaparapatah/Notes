@@ -55,8 +55,8 @@ public class ListNotesFragment extends Fragment {
     }
 
     private void showNotes(int index) {
-        currentNotes = new Note(index,
-                (getResources().getStringArray(R.array.notesList)[index]));
+        currentNotes = new Note((getResources().getStringArray(R.array.notesList)[index]),
+                index);
         if (isLandScape) {
             showNotesLand();
         } else {

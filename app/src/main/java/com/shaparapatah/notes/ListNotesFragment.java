@@ -3,6 +3,7 @@ package com.shaparapatah.notes;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -27,6 +28,26 @@ public class ListNotesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         isLandScape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+
+        if (savedInstanceState != null) {
+            currentNotes = savedInstanceState.getParcelable(KEY_NOTE);
+        }
+
+
+        if (isLandScape)
+            if (currentNotes != null) {
+                showNotes(currentNotes.getToDo());
+            } else {
+                showNotes(0);
+            }
+
+
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelable(KEY_NOTE, currentNotes);
+        super.onSaveInstanceState(outState);
     }
 
     @Override

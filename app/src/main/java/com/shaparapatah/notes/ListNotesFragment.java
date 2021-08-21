@@ -55,13 +55,20 @@ public class ListNotesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
         LinearLayout linearLayout = (LinearLayout) view;
+        createTextViewList(linearLayout);
+        return view;
+    }
+
+    private void createTextViewList(LinearLayout linearLayout) {
         String[] notes = getResources().getStringArray(R.array.notesList);
 
+        LayoutInflater layoutInflater = getLayoutInflater();
         for (int i = 0; i < notes.length; i++) {
             String name = notes[i];
-            TextView textView = new TextView(getContext());
-            textView.setText(name);
-            textView.setTextSize(30);
+            TextView textView = (TextView) layoutInflater.inflate(R.layout.item, linearLayout, false);
+             //TextView textView = new TextView(getContext());
+             textView.setText(name);
+           //   textView.setTextSize(30);
             linearLayout.addView(textView);
 
             int finalI = i;
@@ -72,7 +79,6 @@ public class ListNotesFragment extends Fragment {
                 }
             });
         }
-        return view;
     }
 
     private void showNotes(int index) {

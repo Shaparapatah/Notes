@@ -47,12 +47,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
-        ImageView imageView;
+        //    ImageView imageView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
-          //  imageView = itemView.findViewById(R.id.imageView);
+            //  imageView = itemView.findViewById(R.id.imageView);
 
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override

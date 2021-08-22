@@ -60,6 +60,15 @@ public class ListNotesFragment extends Fragment {
 
         String[] notes = getResources().getStringArray(R.array.notesList);
 
+        initRecycler(view, notes);
+
+
+        //   LinearLayout linearLayout = (LinearLayout) view;
+        //  createTextViewList(linearLayout);
+        return view;
+    }
+
+    private void initRecycler(View view, String[] notes) {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
@@ -75,11 +84,6 @@ public class ListNotesFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(noteAdapter);
-
-
-        //   LinearLayout linearLayout = (LinearLayout) view;
-        //  createTextViewList(linearLayout);
-        return view;
     }
 
    /* private void createTextViewList(LinearLayout linearLayout) {

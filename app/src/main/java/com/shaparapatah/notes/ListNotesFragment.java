@@ -5,12 +5,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ListNotesFragment extends Fragment {
@@ -54,12 +57,32 @@ public class ListNotesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
-        LinearLayout linearLayout = (LinearLayout) view;
-        createTextViewList(linearLayout);
+
+        String[] notes = getResources().getStringArray(R.array.notesList);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        NoteAdapter noteAdapter = new NoteAdapter(notes);
+        noteAdapter.setOnMyClickListener(new MyOnClickListener() {
+            @Override
+            public void onMyClick(View view, int position) {
+                Toast.makeText(getContext(), "Тяжёлая обработка для " + position, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        recyclerView.setAdapter(noteAdapter);
+
+
+        //   LinearLayout linearLayout = (LinearLayout) view;
+        //  createTextViewList(linearLayout);
         return view;
     }
 
-    private void createTextViewList(LinearLayout linearLayout) {
+   /* private void createTextViewList(LinearLayout linearLayout) {
         String[] notes = getResources().getStringArray(R.array.notesList);
 
         LayoutInflater layoutInflater = getLayoutInflater();
@@ -79,7 +102,7 @@ public class ListNotesFragment extends Fragment {
                 }
             });
         }
-    }
+    } */
 
     private void showNotes(int index) {
         currentNotes = new Note((getResources().getStringArray(R.array.notesList)[index]),

@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> {
 
-    private String[] dataSource;
+    private CardSource dataSource;
 
-    public NoteAdapter(String[] dataSource) {
+    public NoteAdapter(CardSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    public void setData(String[] dataSource) {
+    public void setData(CardSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -35,31 +35,34 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.textView.setText(dataSource[position]);
+        holder.notesList.setText(dataSource.getCardData(position).getListNote());
+        holder.toDoList.setText(dataSource.getCardData(position).getListTodo());
 
     }
 
     @Override
     public int getItemCount() {
-        return dataSource.length;
+        return dataSource.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView;
+        TextView notesList;
+        TextView toDoList;
         //    ImageView imageView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.textView);
+            notesList = itemView.findViewById(R.id.notesList);
+            toDoList = itemView.findViewById(R.id.toDoList);
             //  imageView = itemView.findViewById(R.id.imageView);
 
-            textView.setOnClickListener(new View.OnClickListener() {
+  /*         notesList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     listener.onMyClick(v, getAdapterPosition());
                 }
-            });
+            }); */
         }
     }
 }

@@ -58,24 +58,17 @@ public class ListNotesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
 
-        String[] notes = getResources().getStringArray(R.array.notesList);
+        // String[] notes = getResources().getStringArray(R.array.notesList);
 
-        initRecycler(view, notes);
+        CardSource data = new CardSourceImpl(getResources()).init();
 
-
-        //   LinearLayout linearLayout = (LinearLayout) view;
-        //  createTextViewList(linearLayout);
-        return view;
-    }
-
-    private void initRecycler(View view, String[] notes) {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        NoteAdapter noteAdapter = new NoteAdapter(notes);
+        NoteAdapter noteAdapter = new NoteAdapter(data);
         noteAdapter.setOnMyClickListener(new MyOnClickListener() {
             @Override
             public void onMyClick(View view, int position) {
@@ -84,29 +77,9 @@ public class ListNotesFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(noteAdapter);
+        return view;
     }
 
-   /* private void createTextViewList(LinearLayout linearLayout) {
-        String[] notes = getResources().getStringArray(R.array.notesList);
-
-        LayoutInflater layoutInflater = getLayoutInflater();
-        for (int i = 0; i < notes.length; i++) {
-            String name = notes[i];
-            TextView textView = (TextView) layoutInflater.inflate(R.layout.item, linearLayout, false);
-             //TextView textView = new TextView(getContext());
-             textView.setText(name);
-           //   textView.setTextSize(30);
-            linearLayout.addView(textView);
-
-            int finalI = i;
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showNotes(finalI);
-                }
-            });
-        }
-    } */
 
     private void showNotes(int index) {
         currentNotes = new Note((getResources().getStringArray(R.array.notesList)[index]),

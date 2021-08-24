@@ -29,7 +29,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card_view, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -57,12 +57,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             toDoList = itemView.findViewById(R.id.toDoList);
             //  imageView = itemView.findViewById(R.id.imageView);
 
-  /*         notesList.setOnClickListener(new View.OnClickListener() {
+           notesList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     listener.onMyClick(v, getAdapterPosition());
                 }
-            }); */
+            });
         }
     }
 }

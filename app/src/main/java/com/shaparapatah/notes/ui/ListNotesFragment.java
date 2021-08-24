@@ -1,9 +1,8 @@
-package com.shaparapatah.notes;
+package com.shaparapatah.notes.ui;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,9 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.shaparapatah.notes.data.MyOnClickListener;
+import com.shaparapatah.notes.R;
+import com.shaparapatah.notes.data.CardSource;
+import com.shaparapatah.notes.data.CardSourceImpl;
 
 
 public class ListNotesFragment extends Fragment {

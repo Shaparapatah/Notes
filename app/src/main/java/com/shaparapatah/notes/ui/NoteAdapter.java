@@ -1,12 +1,15 @@
-package com.shaparapatah.notes;
+package com.shaparapatah.notes.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.shaparapatah.notes.data.MyOnClickListener;
+import com.shaparapatah.notes.R;
+import com.shaparapatah.notes.data.CardSource;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> {
 

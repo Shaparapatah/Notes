@@ -1,4 +1,4 @@
-package com.shaparapatah.notes;
+package com.shaparapatah.notes.ui;
 
 import android.os.Parcel;
 import android.os.Parcelable;

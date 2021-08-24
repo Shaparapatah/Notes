@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
+
+import com.shaparapatah.notes.ui.ListNotesFragment;
+import com.shaparapatah.notes.ui.NotesFragment;
 
 public class MainActivity extends AppCompatActivity {
 

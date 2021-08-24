@@ -1,6 +1,8 @@
-package com.shaparapatah.notes;
+package com.shaparapatah.notes.data;
 
 import android.content.res.Resources;
+
+import com.shaparapatah.notes.R;
 
 import java.util.ArrayList;
 import java.util.List;

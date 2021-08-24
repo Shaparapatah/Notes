@@ -1,4 +1,4 @@
-package com.shaparapatah.notes;
+package com.shaparapatah.notes.data;
 
 public interface CardSource {
     int size();

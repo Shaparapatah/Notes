@@ -57,12 +57,14 @@ public class ListNotesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
-
-        // String[] notes = getResources().getStringArray(R.array.notesList);
-
-        CardSource data = new CardSourceImpl(getResources()).init();
-
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        CardSource data = new CardSourceImpl(getResources()).init();
+        initRecyclerView(recyclerView, data);
+        return view;
+    }
+
+    private void initRecyclerView(RecyclerView recyclerView, CardSource data) {
+
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -77,7 +79,6 @@ public class ListNotesFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(noteAdapter);
-        return view;
     }
 
 

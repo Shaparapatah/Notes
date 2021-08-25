@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -21,16 +20,17 @@ import com.shaparapatah.notes.R;
 import com.shaparapatah.notes.data.CardSource;
 import com.shaparapatah.notes.data.CardSourceImpl;
 
+import javax.sql.DataSource;
+
 
 public class ListNotesFragment extends Fragment {
 
     Note currentNotes;
     public static String KEY_NOTE = "note";
     boolean isLandScape;
-    private CardSource data;
-    private RecyclerView recyclerView;
-    private NoteAdapter noteAdapter;
-
+    RecyclerView recyclerView;
+    CardSource data;
+    NoteAdapter noteAdapter;
 
 
     public static ListNotesFragment newInstance() {
@@ -66,6 +66,7 @@ public class ListNotesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
         data = new CardSourceImpl(getResources()).init();
@@ -122,14 +123,8 @@ public class ListNotesFragment extends Fragment {
 
     }
 
-  /*  @Override
+    @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.fragment_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
     }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    } */
 }

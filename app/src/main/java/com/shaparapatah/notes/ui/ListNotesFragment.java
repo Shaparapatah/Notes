@@ -4,10 +4,12 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -83,7 +85,7 @@ public class ListNotesFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        noteAdapter = new NoteAdapter(data);
+        noteAdapter = new NoteAdapter(data, this);
         noteAdapter.setOnMyClickListener(new MyOnClickListener() {
             @Override
             public void onMyClick(View view, int position) {
@@ -147,5 +149,28 @@ public class ListNotesFragment extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        requireActivity().getMenuInflater().inflate(R.menu.card_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        int position = noteAdapter.getMenuContextClickPosition();
+        switch (item.getItemId()) {
+            case R.id.action_update:
+                data.getCardData(position).setListNote("Обновили" + position);
+                noteAdapter.notifyItemChanged(position);
+                return true;
+            case R.id.action_delete:
+                data.deleteCardData(position);
+                noteAdapter.notifyItemRemoved(position);
+                return true;
+        }
+        return super.onContextItemSelected(item);
     }
 }

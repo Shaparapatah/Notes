@@ -2,8 +2,8 @@ package com.shaparapatah.notes.data;
 
 public class CardData {
 
-    private final String listNote;
-    private final String listTodo;
+    private  String listNote;
+    private  String listTodo;
 
 
     public String getListNote() {
@@ -14,6 +14,9 @@ public class CardData {
         return listTodo;
     }
 
+    public void setListNote(String listNote) {
+        this.listNote = listNote;
+    }
 
     public CardData(String listNote, String listTodo) {
         this.listNote = listNote;

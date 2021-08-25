@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shaparapatah.notes.data.MyOnClickListener;
@@ -14,9 +15,16 @@ import com.shaparapatah.notes.data.CardSource;
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> {
 
     private CardSource dataSource;
+    private Fragment fragment;
+    private int menuContextClickPosition;
 
-    public NoteAdapter(CardSource dataSource) {
+    public int getMenuContextClickPosition() {
+        return menuContextClickPosition;
+    }
+
+    public NoteAdapter(CardSource dataSource, Fragment fragment) {
         this.dataSource = dataSource;
+        this.fragment = fragment;
     }
 
     public void setData(CardSource dataSource) {
@@ -52,18 +60,29 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
 
         TextView notesList;
         TextView toDoList;
-        //    ImageView imageView;
+
 
         public MyViewHolder(View itemView) {
             super(itemView);
             notesList = itemView.findViewById(R.id.notesList);
             toDoList = itemView.findViewById(R.id.toDoList);
-            //  imageView = itemView.findViewById(R.id.imageView);
+
+
+            fragment.registerForContextMenu(notesList);
 
            notesList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     listener.onMyClick(v, getAdapterPosition());
+                }
+            });
+
+            notesList.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    menuContextClickPosition = getAdapterPosition();
+                    notesList.showContextMenu();
+                    return true;
                 }
             });
         }

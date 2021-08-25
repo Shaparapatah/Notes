@@ -3,11 +3,15 @@ package com.shaparapatah.notes.ui;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -23,6 +27,10 @@ public class ListNotesFragment extends Fragment {
     Note currentNotes;
     public static String KEY_NOTE = "note";
     boolean isLandScape;
+    private CardSource data;
+    private RecyclerView recyclerView;
+    private NoteAdapter noteAdapter;
+
 
 
     public static ListNotesFragment newInstance() {
@@ -59,8 +67,8 @@ public class ListNotesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        CardSource data = new CardSourceImpl(getResources()).init();
+        recyclerView = view.findViewById(R.id.recyclerView);
+        data = new CardSourceImpl(getResources()).init();
         initRecyclerView(recyclerView, data);
         return view;
     }
@@ -72,7 +80,7 @@ public class ListNotesFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        NoteAdapter noteAdapter = new NoteAdapter(data);
+        noteAdapter = new NoteAdapter(data);
         noteAdapter.setOnMyClickListener(new MyOnClickListener() {
             @Override
             public void onMyClick(View view, int position) {
@@ -114,5 +122,14 @@ public class ListNotesFragment extends Fragment {
 
     }
 
+  /*  @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.fragment_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    } */
 }

@@ -29,6 +29,27 @@ public class CardSourceImpl implements CardSource {
 
     }
 
+    @Override
+    public void deleteCardData(int position) {
+        dataSource.remove(position);
+    }
+
+    @Override
+    public void updateCardData(int position, CardData newCardData) {
+        dataSource.set(position, newCardData);
+    }
+
+    @Override
+    public void addCardData(CardData newCardData) {
+        dataSource.add(newCardData);
+    }
+
+    @Override
+    public void clearCardData() {
+        dataSource.clear();
+
+    }
+
     public CardSourceImpl init() {
         dataSource = new ArrayList<>();
         String[] notesList = resources.getStringArray(R.array.notesList);

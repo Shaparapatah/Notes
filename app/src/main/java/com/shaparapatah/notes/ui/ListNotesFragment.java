@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.shaparapatah.notes.data.CardData;
 import com.shaparapatah.notes.data.MyOnClickListener;
 import com.shaparapatah.notes.R;
 import com.shaparapatah.notes.data.CardSource;
@@ -28,9 +30,9 @@ public class ListNotesFragment extends Fragment {
     Note currentNotes;
     public static String KEY_NOTE = "note";
     boolean isLandScape;
-    RecyclerView recyclerView;
-    CardSource data;
-    NoteAdapter noteAdapter;
+    private RecyclerView recyclerView;
+    private CardSource data;
+    private NoteAdapter noteAdapter;
 
 
     public static ListNotesFragment newInstance() {
@@ -126,5 +128,24 @@ public class ListNotesFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.fragment_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                data.addCardData(new CardData("Новая " + data.size(),
+                        "Описание" + data.size()));
+                noteAdapter.notifyItemInserted(data.size() - 1);
+                recyclerView.scrollToPosition(data.size() - 1);
+                return true;
+            case R.id.action_clear:
+                data.clearCardData();
+                noteAdapter.notifyDataSetChanged();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

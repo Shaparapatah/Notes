@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.shaparapatah.notes.observer.Publisher;
 import com.shaparapatah.notes.ui.ListNotesFragment;
 import com.shaparapatah.notes.ui.NotesFragment;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
     private Publisher publisher = new Publisher();
     private Navigation navigation;
+
 
     public Publisher getPublisher() {
         return publisher;
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_menu,menu);
+        getMenuInflater().inflate(R.menu.activity_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

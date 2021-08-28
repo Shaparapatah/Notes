@@ -51,7 +51,7 @@ public class CardSourceImpl implements CardSource {
 
     }
 
-    public CardSourceImpl init() {
+    public CardSource init(CardsSourceResponse cardsSourceResponse) {
         dataSource = new ArrayList<>();
         String[] notesList = resources.getStringArray(R.array.notesList);
         String[] toDoList = resources.getStringArray(R.array.toDoList);
@@ -59,6 +59,10 @@ public class CardSourceImpl implements CardSource {
         for (int i = 0; i < notesList.length; i++) {
 
             dataSource.add(new CardData(notesList[i], toDoList[i], Calendar.getInstance().getTime()));
+        }
+
+        if (cardsSourceResponse!= null) {
+            cardsSourceResponse.initialized(this);
         }
         return this;
     }

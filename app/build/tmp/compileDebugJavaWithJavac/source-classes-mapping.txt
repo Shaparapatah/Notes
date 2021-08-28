@@ -1,0 +1,46 @@
+com/shaparapatah/notes/observer/Publisher.java
+ com.shaparapatah.notes.observer.Publisher
+com/shaparapatah/notes/MainActivity.java
+ com.shaparapatah.notes.MainActivity
+com/shaparapatah/notes/data/CardsSourceRemoteImpl.java
+ com.shaparapatah.notes.data.CardsSourceRemoteImpl
+ com.shaparapatah.notes.data.CardsSourceRemoteImpl$1
+ com.shaparapatah.notes.data.CardsSourceRemoteImpl$2
+com/shaparapatah/notes/data/CardData.java
+ com.shaparapatah.notes.data.CardData
+ com.shaparapatah.notes.data.CardData$1
+com/shaparapatah/notes/ui/ListNotesFragment.java
+ com.shaparapatah.notes.ui.ListNotesFragment
+ com.shaparapatah.notes.ui.ListNotesFragment$1
+ com.shaparapatah.notes.ui.ListNotesFragment$2
+ com.shaparapatah.notes.ui.ListNotesFragment$3
+ com.shaparapatah.notes.ui.ListNotesFragment$4
+com/shaparapatah/notes/data/CardDataTranslate.java
+ com.shaparapatah.notes.data.CardDataTranslate
+ com.shaparapatah.notes.data.CardDataTranslate$Fields
+com/shaparapatah/notes/Navigation.java
+ com.shaparapatah.notes.Navigation
+com/shaparapatah/notes/ui/Note.java
+ com.shaparapatah.notes.ui.Note
+ com.shaparapatah.notes.ui.Note$1
+com/shaparapatah/notes/BuildConfig.java
+ com.shaparapatah.notes.BuildConfig
+com/shaparapatah/notes/ui/NoteAdapter.java
+ com.shaparapatah.notes.ui.NoteAdapter
+ com.shaparapatah.notes.ui.NoteAdapter$MyViewHolder
+ com.shaparapatah.notes.ui.NoteAdapter$MyViewHolder$1
+ com.shaparapatah.notes.ui.NoteAdapter$MyViewHolder$2
+com/shaparapatah/notes/ui/NotesFragment.java
+ com.shaparapatah.notes.ui.NotesFragment
+com/shaparapatah/notes/data/CardSourceImpl.java
+ com.shaparapatah.notes.data.CardSourceImpl
+com/shaparapatah/notes/data/CardsSourceResponse.java
+ com.shaparapatah.notes.data.CardsSourceResponse
+com/shaparapatah/notes/observer/Observer.java
+ com.shaparapatah.notes.observer.Observer
+com/shaparapatah/notes/ui/CardUpdateFragment.java
+ com.shaparapatah.notes.ui.CardUpdateFragment
+com/shaparapatah/notes/data/CardSource.java
+ com.shaparapatah.notes.data.CardSource
+com/shaparapatah/notes/data/MyOnClickListener.java
+ com.shaparapatah.notes.data.MyOnClickListener

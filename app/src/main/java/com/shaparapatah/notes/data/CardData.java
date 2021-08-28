@@ -7,9 +7,20 @@ import java.util.Date;
 
 public class CardData implements Parcelable {
 
+
+    private String id;
     private String listNote;
     private String listTodo;
     private Date date;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public void setListTodo(String listTodo) {
         this.listTodo = listTodo;
@@ -39,7 +50,6 @@ public class CardData implements Parcelable {
             return new CardData[size];
         }
     };
-
 
 
     public String getListNote() {

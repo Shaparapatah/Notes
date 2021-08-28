@@ -25,6 +25,8 @@ import com.shaparapatah.notes.R;
 import com.shaparapatah.notes.data.CardData;
 import com.shaparapatah.notes.data.CardSource;
 import com.shaparapatah.notes.data.CardSourceImpl;
+import com.shaparapatah.notes.data.CardsSourceRemoteImpl;
+import com.shaparapatah.notes.data.CardsSourceResponse;
 import com.shaparapatah.notes.data.MyOnClickListener;
 import com.shaparapatah.notes.observer.Observer;
 import com.shaparapatah.notes.observer.Publisher;
@@ -64,26 +66,7 @@ public class ListNotesFragment extends Fragment {
         return new ListNotesFragment();
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        data = new CardSourceImpl(getResources()).init();
-        isLandScape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-        if (savedInstanceState != null) {
-            currentNotes = savedInstanceState.getParcelable(KEY_NOTE);
-        }
-
-
-        if (isLandScape)
-            if (currentNotes != null) {
-                showNotes(currentNotes.getToDo());
-            } else {
-                showNotes(0);
-            }
-
-
-    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -98,6 +81,13 @@ public class ListNotesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
         initRecyclerView(recyclerView, data);
+        data = new CardsSourceRemoteImpl().init(new CardsSourceResponse() {
+            @Override
+            public void initialized(CardSource cardSource) {
+                noteAdapter.notifyDataSetChanged();
+            }
+        });
+        noteAdapter.setDataSource(data);
         return view;
     }
 
@@ -109,9 +99,7 @@ public class ListNotesFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
 
-
-
-        noteAdapter = new NoteAdapter(data, this);
+        noteAdapter = new NoteAdapter(this);
         recyclerView.setAdapter(noteAdapter);
         defaultAnimation(recyclerView);
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549451387405",
+    "project_id": "hm10-4c49f",
+    "storage_bucket": "hm10-4c49f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549451387405:android:92303e10797f9ca1e9fb44",
+        "android_client_info": {
+          "package_name": "com.shaparapatah.notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549451387405-tsh69kmatcqc7umhuedaemc3v996dbge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi7q7cpqax0xb59OZxJKrhBOH8qing5PE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549451387405-tsh69kmatcqc7umhuedaemc3v996dbge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

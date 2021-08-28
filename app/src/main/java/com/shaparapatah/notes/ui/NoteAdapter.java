@@ -23,15 +23,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         return menuContextClickPosition;
     }
 
-    public NoteAdapter(CardSource dataSource, Fragment fragment) {
+    public void setDataSource(CardSource dataSource) {
         this.dataSource = dataSource;
+        notifyDataSetChanged();
+    }
+
+    public NoteAdapter(Fragment fragment) {
         this.fragment = fragment;
     }
-
-    public void setData(CardSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
 
     private MyOnClickListener listener;
 

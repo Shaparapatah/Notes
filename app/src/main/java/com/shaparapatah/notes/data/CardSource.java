@@ -1,6 +1,8 @@
 package com.shaparapatah.notes.data;
 
 public interface CardSource {
+    CardSource init(CardsSourceResponse cardsSourceResponse);
+
     int size();
 
     CardData getCardData(int position);

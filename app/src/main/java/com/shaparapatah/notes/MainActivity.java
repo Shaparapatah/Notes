@@ -1,7 +1,6 @@
 package com.shaparapatah.notes;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +8,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.shaparapatah.notes.observer.Publisher;
 import com.shaparapatah.notes.ui.ListNotesFragment;
 import com.shaparapatah.notes.ui.NotesFragment;
@@ -32,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         initToolbar();
         navigation.addFragment(ListNotesFragment.newInstance(), false);
         getSupportFragmentManager().addOnBackStackChangedListener(this);
+
+
+
 
 
         if (savedInstanceState == null) {
@@ -87,4 +88,9 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     public Navigation getNavigation() {
         return navigation;
     }
+
+
+
+
+
 }

@@ -1098,6 +1098,10 @@ int color bright_foreground_inverse_material_dark 0x7f060024
 int color bright_foreground_inverse_material_light 0x7f060025
 int color bright_foreground_material_dark 0x7f060026
 int color bright_foreground_material_light 0x7f060027
+int color browser_actions_bg_grey 0x7f0600e1
+int color browser_actions_divider_color 0x7f0600e2
+int color browser_actions_text_color 0x7f0600e3
+int color browser_actions_title_color 0x7f0600e4
 int color button_material_dark 0x7f060028
 int color button_material_light 0x7f060029
 int color cardview_dark_background 0x7f06002a
@@ -1366,6 +1370,8 @@ int dimen abc_text_size_title_material 0x7f07004f
 int dimen abc_text_size_title_material_toolbar 0x7f070050
 int dimen action_bar_size 0x7f070051
 int dimen appcompat_dialog_background_inset 0x7f070052
+int dimen browser_actions_context_menu_max_width 0x7f0701ae
+int dimen browser_actions_context_menu_min_padding 0x7f0701af
 int dimen cardview_compat_inset_shadow 0x7f070053
 int dimen cardview_default_elevation 0x7f070054
 int dimen cardview_default_radius 0x7f070055
@@ -1978,6 +1984,11 @@ int id bounce 0x7f090066
 int id bounceBoth 0x7f090067
 int id bounceEnd 0x7f090068
 int id bounceStart 0x7f090069
+int id browser_actions_header_text 0x7f0901ef
+int id browser_actions_menu_item_icon 0x7f0901f0
+int id browser_actions_menu_item_text 0x7f0901f1
+int id browser_actions_menu_items 0x7f0901f2
+int id browser_actions_menu_view 0x7f0901f3
 int id buttonPanel 0x7f09006a
 int id cache_measures 0x7f09006b
 int id cancel_action 0x7f09006c
@@ -2436,6 +2447,8 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_main 0x7f0c001c
+int layout browser_actions_context_menu_page 0x7f0c0080
+int layout browser_actions_context_menu_row 0x7f0c0081
 int layout content_main 0x7f0c001d
 int layout custom_dialog 0x7f0c001e
 int layout design_bottom_navigation_item 0x7f0c001f

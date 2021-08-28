@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\Shaparapatah\\AndroidStudioProjects\\Notes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Shaparapatah\\.gradle\\caches\\transforms-3\\f40d2a08a355d250ec336f9cb211375c\\transformed\\jetified-play-services-basement-17.1.0\\res\\values-is\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "187",
+                        "endOffsets": "434"
+                    },
+                    "to": {
+                        "startLines": "45",
+                        "startColumns": "4",
+                        "startOffsets": "4454",
+                        "endColumns": "187",
+                        "endOffsets": "4637"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Shaparapatah\\.gradle\\caches\\transforms-3\\b20d70b14f15690cac145ca1871d3078\\transformed\\core-1.5.0\\res\\values-is\\values-is.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "275,375,472,584,669,770,884,965,1044,1135,1228,1321,1415,1521,1614,1709,1804,1895,1989,2070,2180,2287,2384,2493,2593,2696,2851,9874",
                         "endColumns": "99,96,111,84,100,113,80,78,90,92,92,93,105,92,94,94,90,93,80,109,106,96,108,99,102,154,97,80",
                         "endOffsets": "370,467,579,664,765,879,960,1039,1130,1223,1316,1410,1516,1609,1704,1799,1890,1984,2065,2175,2282,2379,2488,2588,2691,2846,2944,9950"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Shaparapatah\\.gradle\\caches\\transforms-3\\0ea3ecfa6d40d458b67b81387643d984\\transformed\\jetified-play-services-basement-17.0.0\\res\\values-is\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "187",
-                        "endOffsets": "434"
-                    },
-                    "to": {
-                        "startLines": "45",
-                        "startColumns": "4",
-                        "startOffsets": "4454",
-                        "endColumns": "187",
-                        "endOffsets": "4637"
                     }
                 },
                 {

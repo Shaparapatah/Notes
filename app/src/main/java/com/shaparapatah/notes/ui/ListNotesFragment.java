@@ -1,15 +1,8 @@
 package com.shaparapatah.notes.ui;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,13 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.shaparapatah.notes.data.CardData;
-import com.shaparapatah.notes.data.MyOnClickListener;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.shaparapatah.notes.MainActivity;
+import com.shaparapatah.notes.Navigation;
 import com.shaparapatah.notes.R;
+import com.shaparapatah.notes.data.CardData;
 import com.shaparapatah.notes.data.CardSource;
 import com.shaparapatah.notes.data.CardSourceImpl;
-
-import javax.sql.DataSource;
+import com.shaparapatah.notes.data.MyOnClickListener;
+import com.shaparapatah.notes.observer.Observer;
+import com.shaparapatah.notes.observer.Publisher;
 
 
 public class ListNotesFragment extends Fragment {
@@ -33,9 +35,29 @@ public class ListNotesFragment extends Fragment {
     Note currentNotes;
     public static String KEY_NOTE = "note";
     boolean isLandScape;
+
     private RecyclerView recyclerView;
     private CardSource data;
     private NoteAdapter noteAdapter;
+
+    private Navigation navigation;
+    private Publisher publisher;
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        MainActivity activity = (MainActivity) context;
+        navigation = activity.getNavigation();
+        publisher = activity.getPublisher();
+    }
+
+    @Override
+    public void onDetach() {
+        navigation = null;
+        publisher = null;
+        super.onDetach();
+    }
 
 
     public static ListNotesFragment newInstance() {
@@ -45,6 +67,7 @@ public class ListNotesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        data = new CardSourceImpl(getResources()).init();
         isLandScape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
         if (savedInstanceState != null) {
@@ -74,7 +97,6 @@ public class ListNotesFragment extends Fragment {
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fragment_list_notes, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
-        data = new CardSourceImpl(getResources()).init();
         initRecyclerView(recyclerView, data);
         return view;
     }
@@ -87,9 +109,12 @@ public class ListNotesFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        defaultAmination(recyclerView);
+
 
         noteAdapter = new NoteAdapter(data, this);
+        recyclerView.setAdapter(noteAdapter);
+        defaultAnimation(recyclerView);
+
         noteAdapter.setOnMyClickListener(new MyOnClickListener() {
             @Override
             public void onMyClick(View view, int position) {
@@ -97,10 +122,9 @@ public class ListNotesFragment extends Fragment {
 
             }
         });
-        recyclerView.setAdapter(noteAdapter);
     }
 
-    private void defaultAmination(RecyclerView recyclerView) {
+    private void defaultAnimation(RecyclerView recyclerView) {
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setAddDuration(2000);
         defaultItemAnimator.setRemoveDuration(2000);
@@ -149,10 +173,14 @@ public class ListNotesFragment extends Fragment {
 
         switch (item.getItemId()) {
             case R.id.action_add:
-                data.addCardData(new CardData("Новая " + data.size(),
-                        "Описание" + data.size()));
-                noteAdapter.notifyItemInserted(data.size() - 1);
-                recyclerView.scrollToPosition(data.size() - 1);
+                navigation.addFragment(CardUpdateFragment.newInstance(), true);
+                publisher.subscribe(new Observer() {
+                    @Override
+                    public void updateState(CardData cardData) {
+                        data.addCardData(cardData);
+                        noteAdapter.notifyItemInserted(data.size() - 1);
+                    }
+                });
                 return true;
             case R.id.action_clear:
                 data.clearCardData();
@@ -175,8 +203,17 @@ public class ListNotesFragment extends Fragment {
         int position = noteAdapter.getMenuContextClickPosition();
         switch (item.getItemId()) {
             case R.id.action_update:
-                data.getCardData(position).setListNote("Обновили" + position);
-                noteAdapter.notifyItemChanged(position);
+             /*   data.getCardData(position).setListNote("Обновили" + position);
+                noteAdapter.notifyItemChanged(position); */
+
+                navigation.addFragment(CardUpdateFragment.newInstance(data.getCardData(position)), true);
+                publisher.subscribe(new Observer() {
+                    @Override
+                    public void updateState(CardData cardData) {
+                        data.updateCardData(position, cardData);
+                        noteAdapter.notifyItemChanged(position);
+                    }
+                });
                 return true;
             case R.id.action_delete:
                 data.deleteCardData(position);

@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import com.shaparapatah.notes.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class CardSourceImpl implements CardSource {
@@ -57,7 +58,7 @@ public class CardSourceImpl implements CardSource {
 
         for (int i = 0; i < notesList.length; i++) {
 
-            dataSource.add(new CardData(notesList[i], toDoList[i]));
+            dataSource.add(new CardData(notesList[i], toDoList[i], Calendar.getInstance().getTime()));
         }
         return this;
     }

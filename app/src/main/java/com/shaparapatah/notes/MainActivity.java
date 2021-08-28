@@ -1,25 +1,35 @@
 package com.shaparapatah.notes;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.view.Menu;
-
+import com.shaparapatah.notes.observer.Publisher;
 import com.shaparapatah.notes.ui.ListNotesFragment;
 import com.shaparapatah.notes.ui.NotesFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
+
+    private Publisher publisher = new Publisher();
+    private Navigation navigation;
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        navigation = new Navigation(getSupportFragmentManager());
         initToolbar();
-        addFragment(ListNotesFragment.newInstance());
+        navigation.addFragment(ListNotesFragment.newInstance(), false);
+        getSupportFragmentManager().addOnBackStackChangedListener(this);
 
 
         if (savedInstanceState == null) {
@@ -50,12 +60,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void addFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.listNotes_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_menu,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public void onBackStackChanged() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+
+    public Navigation getNavigation() {
+        return navigation;
+    }
 }

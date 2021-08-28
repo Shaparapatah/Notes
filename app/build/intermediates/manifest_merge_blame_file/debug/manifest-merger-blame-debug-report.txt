@@ -11,13 +11,13 @@
 9-->C:\Users\Shaparapatah\AndroidStudioProjects\Notes\app\src\main\AndroidManifest.xml
 10
 11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+12    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:26:5-79
-13-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:26:22-76
+13-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:13:5-79
+13-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:13:22-76
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:27:5-67
-14-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:27:22-64
+14-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:14:5-67
+14-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:14:22-64
 15
 16    <application
 16-->C:\Users\Shaparapatah\AndroidStudioProjects\Notes\app\src\main\AndroidManifest.xml:5:5-21:19
@@ -57,48 +57,48 @@
 35        </activity>
 36
 37        <service
-37-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:30:9-36:19
+37-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:17:9-23:19
 38            android:name="com.google.firebase.components.ComponentDiscoveryService"
-38-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:31:13-84
+38-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:18:13-84
 39            android:directBootAware="true"
 39-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 40            android:exported="false" >
-40-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:32:13-37
+40-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:19:13-37
 41            <meta-data
-41-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:33:13-35:85
-42                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-42-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:34:17-107
+41-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:20:13-22:85
+42                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+42-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:21:17-111
 43                android:value="com.google.firebase.components.ComponentRegistrar" />
-43-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Shaparapatah\.gradle\caches\transforms-3\22a7ede7574663869c85e73d03de29fa\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:35:17-82
+43-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:22:17-82
 44            <meta-data
-44-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:20:13-22:85
-45                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-45-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:21:17-111
+44-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\6d1b98c7404e2983ae1db93f24a66221\transformed\jetified-firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
+45                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+45-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\6d1b98c7404e2983ae1db93f24a66221\transformed\jetified-firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
 46                android:value="com.google.firebase.components.ComponentRegistrar" />
-46-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\Shaparapatah\.gradle\caches\transforms-3\4f3e562f9b4a28221cc958170aa1cd8b\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:22:17-82
+46-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\6d1b98c7404e2983ae1db93f24a66221\transformed\jetified-firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
 47        </service>
 48
-49        <activity
-49-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\178337a20957ef07da92cd7eb3bf43d5\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-50            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-50-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\178337a20957ef07da92cd7eb3bf43d5\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-51            android:exported="false"
-51-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\178337a20957ef07da92cd7eb3bf43d5\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-52            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-52-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\178337a20957ef07da92cd7eb3bf43d5\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-53
-54        <provider
-54-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
-55            android:name="com.google.firebase.provider.FirebaseInitProvider"
-55-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
-56            android:authorities="com.shaparapatah.notes.firebaseinitprovider"
-56-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
-57            android:directBootAware="true"
-57-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+49        <provider
+49-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+50            android:name="com.google.firebase.provider.FirebaseInitProvider"
+50-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+51            android:authorities="com.shaparapatah.notes.firebaseinitprovider"
+51-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+52            android:directBootAware="true"
+52-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+53            android:exported="false"
+53-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+54            android:initOrder="100" />
+54-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+55
+56        <activity
+56-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\c5ad7676ef4a81714767033df9c5638c\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+57            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+57-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\c5ad7676ef4a81714767033df9c5638c\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 58            android:exported="false"
-58-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
-59            android:initOrder="100" />
-59-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\f618723480d3ae26c45b83bc1f544dd5\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+58-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\c5ad7676ef4a81714767033df9c5638c\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+59            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+59-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\c5ad7676ef4a81714767033df9c5638c\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 60
 61        <meta-data
 61-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Shaparapatah\.gradle\caches\transforms-3\0ea3ecfa6d40d458b67b81387643d984\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69

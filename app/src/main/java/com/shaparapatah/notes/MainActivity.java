@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptionsExtension;
 import com.shaparapatah.notes.observer.Publisher;
 import com.shaparapatah.notes.ui.ListNotesFragment;
 import com.shaparapatah.notes.ui.NotesFragment;

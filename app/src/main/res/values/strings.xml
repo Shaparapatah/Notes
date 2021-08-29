@@ -11,4 +11,9 @@
     <string name="text_clear">Очистить</string>
     <string name="update">Редактировать</string>
     <string name="delete">Удалить</string>
+
+
+
+    <string name="web_client_id">xxxxxxxx..place your web client id here</string>
+
 </resources>
